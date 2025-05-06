@@ -1,9 +1,9 @@
 // Elements
 const Activities = document.querySelector("#Activities");
-const openBtn   = document.querySelector(".left-side");
-const modal     = document.getElementById("modal");
-const closeBtn  = modal.querySelector(".close-button");
-const okBtn     = modal.querySelector(".ok-button");
+const openBtn = document.querySelector(".left-side");
+const modal = document.getElementById("modal");
+const closeBtn = modal.querySelector(".close-button");
+const okBtn = modal.querySelector(".ok-button");
 const nameInput = modal.querySelector("#activityName");
 
 // — Load saved activities on page load —
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 openBtn.addEventListener("click", () => modal.showModal());
 closeBtn.addEventListener("click", () => modal.close());
 
-// — Add new activity on “Ok” —
+
 okBtn.addEventListener("click", () => {
   const name = nameInput.value.trim();
   if (!name) {
@@ -34,25 +34,23 @@ okBtn.addEventListener("click", () => {
   modal.close();
 });
 
-// — Create one activity card + year grid —
+
 function createActivityElement({ name, completions, createdAt }) {
   // wrapper container
   const wrapper = document.createElement("div");
   wrapper.className = "activityWrapper";
   wrapper.dataset.activityId = createdAt;
 
-  // title
   const h2 = document.createElement("h2");
   h2.className = "activityName";
   h2.textContent = name;
-  wrapper.appendChild(h2);
+  wrapper.appendChild(h2); // the activity name 
 
-  // activity + grid
   const container = document.createElement("div");
-  container.className = "Activity";
+  container.className = "Activity"; // activity
 
   const grid = document.createElement("div");
-  grid.className = "grid";
+  grid.className = "grid";// grid
 
   const start = new Date(createdAt);
   for (let day = 0; day < 7; day++) {
@@ -76,9 +74,8 @@ function createActivityElement({ name, completions, createdAt }) {
         cell.classList.add("completed");
       }
 
-      // toggle on click
       cell.addEventListener("click", () => {
-        cell.classList.toggle("completed");
+        cell.classList.toggle("completed"); // check/toggle on click
         saveActivities();
       });
 
@@ -88,7 +85,7 @@ function createActivityElement({ name, completions, createdAt }) {
   }
   container.appendChild(grid);
 
-  // control buttons
+  // control buttons (done/delete bnts)
   const controls = document.createElement("div");
   controls.className = "controlBtns";
 
@@ -116,13 +113,14 @@ function createActivityElement({ name, completions, createdAt }) {
     saveActivities();
   });
 
-  controls.append(doneBtn, delBtn);
+  controls.append(doneBtn);
+  controls.append(delBtn);
   container.appendChild(controls);
   wrapper.appendChild(container);
   Activities.appendChild(wrapper);
 }
 
-// — Persist all activities into localStorage —
+// save data to local storage 
 function saveActivities() {
   const wrappers = document.querySelectorAll(".activityWrapper");
   const out = Array.from(wrappers).map(w => {

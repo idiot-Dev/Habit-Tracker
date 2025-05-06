@@ -4,76 +4,82 @@ body {
     padding: 20px;
 }
 
-  
+
 .logo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 20px;
 }
 
 .fire {
-  width: 35px;
-  height: 35px;
+    width: 35px;
+    height: 35px;
 }
 
 .right-side {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 30px;
 }
 
 .left-side {
-  display: flex;
-  align-items: center;
-  margin-right: 30px;
-  padding: 5px 10px;
-  gap: 5px;
-  border-radius: 40px;
-  transition: all 0.2s ease;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    padding: 2px 15px;
+    gap: 5px;
+    border-radius: 40px;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
+
 .left-side svg {
     width: 30px;
     height: 30px;
-    fill: white;
+
 }
-  
+
 .left-side:hover {
-  fill: rgb(99, 96, 96);
-  color: rgb(99, 96, 96);
-  background-color: #f0f0f0;
+    fill: rgb(99, 96, 96);
+    color: rgb(99, 96, 96);
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border: none;
 }
-  
+
 #modal {
-  border: none;
-  border-radius: 5px;
-  padding: 15px 25px;
-  text-align: center;
-  width: 280px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    border: none;
+    border-radius: 20px;
+    padding: 15px 25px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
-  
+
 #modal::backdrop {
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
 }
-  
+
 #modal input {
     border-radius: 20px;
     font-size: 18px;
     margin-bottom: 15px;
     padding: 8px 12px;
 }
-  
+
 #modal button {
     border-radius: 20px;
     font-size: 16px;
     padding: 5px 10px;
     cursor: pointer;
 }
-    
+
 #Activities {
     display: flex;
     flex-direction: column;
@@ -83,20 +89,21 @@ body {
     padding: 10px;
     margin-inline: auto;
 }
-  
+
 .activityWrapper {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin: 10px 0px;
 }
-  
+
 #Activities h2 {
     margin: 2px;
     color: #333;
 }
-  
+
 .Activity {
     display: flex;
     margin-bottom: 20px;
@@ -107,42 +114,42 @@ body {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-  
+
 .grid {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
-  
+
 .day-row {
-  display: flex;
-  gap: 2px;
-  align-items: center;
+    display: flex;
+    gap: 2px;
+    align-items: center;
 }
 
 .cell {
-  width: 15px;
-  height: 15px;
-  background-color: #ebedf0;
-  border-radius: 2px;
-  transition: all 0.2s ease;
-  cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background-color: #ebedf0;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .cell:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .cell.completed {
-  background-color: green;
+    background-color: green;
 }
 
 .controlBtns {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-  
+
 .doneBtn,
 .delBtn {
     width: 40px;
@@ -157,7 +164,7 @@ body {
 .delBtn:hover {
     background-color: #f0f0f0;
 }
-  
+
 .doneBtn svg {
     fill: lightgreen;
 }
